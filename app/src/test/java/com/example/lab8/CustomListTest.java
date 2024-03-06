@@ -16,22 +16,14 @@ public class CustomListTest {
 
     private CustomList list;
     /**
-     * create a mock list for my city list with one city by default
+     * create a mock list for my city list
      * @return the list
      */
     public CustomList MockCityList(){
         list = new CustomList(null,new ArrayList<>());
-        list.addCity(mockCity());
         return list;
     }
 
-    /** Baseline city for tests.
-     *
-     * @return city
-     */
-    private City mockCity() {
-        return new City("Edmonton", "Alberta");
-    }
     /**
      * get the size of the list
      * increase the list by adding a new city
@@ -48,8 +40,10 @@ public class CustomListTest {
     @Test
     void hasCityTest(){
         list = MockCityList();
-        assertTrue(list.hasCity(mockCity()));
-        City city = new City("Charlottetown", "Prince Edward Island");
-        assertFalse(list.hasCity(city));
+        City city1 = new City("Edmonton","Alberta");
+        list.addCity(city1);
+        assertTrue(list.hasCity(city1));
+        City city2 = new City("Charlottetown", "Prince Edward Island");
+        assertFalse(list.hasCity(city2));
     }
 }
