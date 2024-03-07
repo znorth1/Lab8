@@ -97,13 +97,12 @@ public class CustomList extends ArrayAdapter<City> {
             throw new IllegalArgumentException("ERROR -> City not in list.");
         }
     }
-
     /**
      * This gives a count of the cities in the list
      *
      * @return Returns the size of the list of City objects
      */
     public int countCities() {
-        return 0;
+        return cities.size();
     }
 }
