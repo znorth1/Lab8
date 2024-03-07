@@ -40,4 +40,5 @@ public class City implements Comparable{
         City city = (City) o;
         return this.getCityName().equals(city.getCityName()) && this.getProvinceName().equals(city.getProvinceName());
     }
+
 }

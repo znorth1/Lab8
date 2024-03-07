@@ -31,8 +31,8 @@ public class CustomList extends ArrayAdapter<City> {
 
         View view = convertView;
 
-        if(view == null){
-            view = LayoutInflater.from(context).inflate(R.layout.content, parent,false);
+        if (view == null) {
+            view = LayoutInflater.from(context).inflate(R.layout.content, parent, false);
         }
 
         City city = cities.get(position);
@@ -49,11 +49,13 @@ public class CustomList extends ArrayAdapter<City> {
 
     /**
      * this gets size of the list
+     *
      * @return
      */
-    public int getCount(){
+    public int getCount() {
         return cities.size();
     }
+
     /**
      * This returns a sorted list of cities
      *
@@ -64,34 +66,44 @@ public class CustomList extends ArrayAdapter<City> {
         Collections.sort(list);
         return list;
     }
+
     /**
      * this adds a city object to the list
-     *the second phase, you can add the
-     city * @param city
+     * the second phase, you can add the
+     * city * @param city
      */
-    public void addCity(City city){
+    public void addCity(City city) {
         cities.add(city);
     }
+
     /**
      * This checks if there is a city in the list
      *
      * @param city
      * @return returns Boolean.TRUE if in the list or Boolean.FALSE if it is not
      */
-    public boolean hasCity(City city){
+    public boolean hasCity(City city) {
         if (this.cities.contains(city)) {
             return Boolean.TRUE;
-        }else {
+        } else {
             return Boolean.FALSE;
         }
     }
 
     public void deleteCity(City city) throws Exception {
-        if (hasCity(city)){
+        if (hasCity(city)) {
             this.cities.remove(city);
-        }else{
+        } else {
             throw new IllegalArgumentException("ERROR -> City not in list.");
         }
     }
 
+    /**
+     * This gives a count of the cities in the list
+     *
+     * @return Returns the size of the list of City objects
+     */
+    public int countCities() {
+        return 0;
+    }
 }
